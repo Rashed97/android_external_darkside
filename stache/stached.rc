@@ -2,3 +2,8 @@ on post-fs-data
     # Create stache main dir if not already present
     mkdir /data/stache 0755 root system
     chmod 2755 /data/stache
+
+service stache-daemon /system/bin/stached
+    class main
+    user root
+    group root system
