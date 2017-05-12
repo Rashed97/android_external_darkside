@@ -1,4 +1,4 @@
 on post-fs-data
     # Create stache main dir if not already present
-    mkdir /data/stache
-    chmod 0644 /data/stache
+    mkdir /data/stache 0755 root system
+    chmod 2755 /data/stache
