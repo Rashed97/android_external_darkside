@@ -7,3 +7,4 @@ service stache-daemon /system/bin/stached
     class main
     user root
     group root system
+    oneshot
