@@ -1,10 +1,13 @@
 on post-fs-data
     # Create stache main dir if not already present
-    mkdir /data/stache 0755 root system
-    chmod 2755 /data/stache
+    mkdir /data/stache 0770 system system
+    # Create stache socket if not already present
+    mkdir /data/misc/stache/ 0770 system system
+    start stache-daemon
 
 service stache-daemon /system/bin/stached
     class main
     user root
     group root system
     oneshot
+    disabled

@@ -52,7 +52,7 @@
 static int listen_fd = -1;
 static struct sockaddr_un addr;
 
-#define STACHE_SOCKET "/data/stache/stache_socket"
+#define STACHE_SOCKET "/data/misc/stache/stache_socket"
 
 static
 void usage(const char *program)
@@ -119,7 +119,7 @@ int open_socket()
 
     while(1) {
         ret_fd = accept(listen_fd, (struct sockaddr*) NULL, NULL);
-        printf("Recieved data on socket: %i", ret_fd);
+        ALOGE("Recieved data on socket: %i", ret_fd);
         close(ret_fd);
         sleep(1);
     }
